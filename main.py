@@ -77,7 +77,7 @@ st.write(fig)
 st.sidebar.write('How would a price distribution for your room look like?')
 neighbourhood = st.sidebar.selectbox('District', df.host_neighbourhood.unique())
 roomtype= st.sidebar.selectbox('Room type', df.room_type.unique())
-rooms = st.sidebar.slider('Bedrooms', 1, 10, 1)
+rooms = st.sidebar.slider('Bedrooms', 1, 5, 1)
 
 # display graph
 st.write('$ Price distribution based on your input:')
