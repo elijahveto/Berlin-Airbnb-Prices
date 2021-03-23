@@ -25,7 +25,11 @@ fig.update_layout(
     )
 st.write(fig)
 st.write('Who would have thought that Marzahn would be so luxurious ;) One has to look at the distribution of Prices in Marzahn, you will see that there are just too few listings.')
-hood = st.sidebar.selectbox('Select a District', ('All', data.host_neighbourhood))
+
+options = ['All']
+options += [hood for hood in data.host_neighbourhood]
+
+hood = st.sidebar.selectbox('Select a District', options=options)
 max_price = st.sidebar.slider('Price Cutoff', 100, 4000, 1000)
 
 cut_df = df[df.price < max_price]
